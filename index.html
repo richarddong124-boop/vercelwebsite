@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="zh" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#081b3b",
+                        "on-tertiary-container": "#00984e",
+                        "secondary-fixed": "#d8e2ff",
+                        "background": "#f4fafd",
+                        "tertiary-fixed-dim": "#61de8a",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "surface-container-high": "#e3e9ec",
+                        "status-success-bg": "#eaf5ee",
+                        "inverse-surface": "#2b3134",
+                        "inverse-on-surface": "#ecf2f5",
+                        "border-subtle": "#d5dde2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#085ac0",
+                        "text-muted": "#59636a",
+                        "surface-dim": "#d5dbde",
+                        "on-background": "#161d1f",
+                        "tertiary-fixed": "#7efba4",
+                        "inverse-primary": "#b6c6ef",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary": "#085ac0",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed": "#081b3b",
+                        "on-primary-fixed-variant": "#364669",
+                        "on-error": "#ffffff",
+                        "text-primary": "#161d1f",
+                        "outline": "#75777f",
+                        "status-success-text": "#16743a",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#dde3e6",
+                        "surface-container": "#e9eff2",
+                        "on-secondary-container": "#002c66",
+                        "surface-variant": "#dde3e6",
+                        "on-tertiary-fixed": "#00210c",
+                        "on-primary-container": "#7384a9",
+                        "surface": "#ffffff",
+                        "on-surface": "#161d1f",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c5c6cf",
+                        "surface-bright": "#f4fafd",
+                        "tertiary-container": "#00210c",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#eef5f7",
+                        "on-surface-variant": "#44474e",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-tint": "#4e5e82",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#adc6ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "gap-md": "20px",
+                        "gap-xs": "8px",
+                        "gap-sm": "12px",
+                        "unit": "8px",
+                        "margin-x": "8%",
+                        "panel-padding": "40px",
+                        "section-v": "60px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script>
+<style>
+        [lang="zh"] .lang-en { display: none; }
+        [lang="en"] .lang-cn { display: none; }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+        [lang="zh"] .hero-title {
+            letter-spacing: -0.01em;
+        }
+
+        /* Entrance Animation */
+        .reveal-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Icon Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .feature-card:hover .feature-icon {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* Hover Effects */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(8, 90, 192, 0.15);
+            border-color: rgba(8, 90, 192, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-background text-on-background">
+<!-- Background Branding Layer -->
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border-subtle">
+<div class="max-w-[1200px] mx-auto px-gutter min-h-[4rem] py-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
+<img src="logo.png" alt="Joy Flow controller logo" class="w-12 h-12 object-contain" width="48" height="48">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold tracking-tight">Joy Flow</span>
+<span class="text-xs text-text-muted font-medium bg-surface-container px-2 py-0.5 rounded-full">by LazyRichie</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 w-full sm:w-auto">
+<button class="text-sm font-semibold hover:bg-surface-container-high transition-colors px-3 py-1.5 rounded-lg border border-outline-variant flex items-center gap-1 flex-1 sm:flex-none justify-center" onclick="toggleLang()"><span class="lang-en">中文 / EN</span><span class="lang-cn">EN / 中文</span></button>
+<a class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity flex-1 sm:flex-none justify-center" data-app-link="github" href="#" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[18px]">code</span>
+<span class="lang-en">View Source</span>
+<span class="lang-cn">查看源码</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-gutter pt-20 text-center pb-20">
+<div class="flex justify-center gap-4 text-3xl mb-4">
+<span class="">🎮</span><span class="">🖱️</span><span class="">🎙️</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-status-success-bg border border-status-success-text/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-status-success-text animate-pulse"></span>
+<span class="text-[13px] font-bold uppercase tracking-wider text-status-success-text">
+<span class="lang-en">Running locally</span>
+<span class="lang-cn">本地运行中</span>
+</span>
+</div>
+<h1 class="hero-title mb-8">
+<span class="lang-en">Your controller.<br>Now controls everything.</span>
+<span class="lang-cn">让你的手柄<br>带动你的工作流。</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-text-muted leading-relaxed mb-12">
+<span class="lang-en">Joy Flow turns your controller into a desktop control system. Move your cursor, dictate text, and control everyday actions naturally.</span>
+<span class="lang-cn">悦流让您的手柄变成 Vibe Coding 利器。多重灵敏度摇杆代替鼠标，语音还能直接输入文字，让您灵感悦流不息。</span>
+</p>
+<a class="inline-flex items-center justify-center bg-secondary text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" data-app-link="download" href="#" download="Joy.Flow.exe" aria-label="Download Joy Flow for Windows">
+<span class="lang-en">Download Joy Flow</span>
+<span class="lang-cn">下载 Joy Flow</span>
+</a><div class="mt-6 italic text-text-muted transition-all duration-300 hover:scale-105 hover:text-secondary cursor-default select-none [transform:skewX(-15deg)] font-bold">
+  By LazyRichie.com
+</div>
+</section>
+<!-- Features Grid -->
+<section class="max-w-[1200px] mx-auto px-gutter py-20 overflow-hidden">
+<div class="bg-white/40 backdrop-blur-sm border border-border-subtle rounded-[2rem] p-8 md:p-12 shadow-sm">
+<h2 class="text-3xl font-bold text-center mb-16">
+<span class="lang-en">Everything you need, built in</span>
+<span class="lang-cn">核心功能</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="features-grid">
+<!-- Feature 1 -->
+<div class="feature-card reveal-card bg-white p-6 rounded-2xl border border-border-subtle shadow-sm flex flex-col items-start cursor-default visible" style="transition-delay: 100ms;">
+<div class="feature-icon text-3xl mb-4">🎮</div>
+<h3 class="text-xl font-bold mb-3">
+<span class="lang-en">Controller Cursor Control</span>
+<span class="lang-cn">手柄控制光标</span>
+</h3>
+<p class="text-text-muted">
+<span class="lang-en">Move your mouse smoothly with the left stick.</span>
+<span class="lang-cn">使用左摇杆流畅移动鼠标。</span>
+</p>
+</div>
+<!-- Feature 2 -->
+<div class="feature-card reveal-card bg-white p-6 rounded-2xl border border-border-subtle shadow-sm flex flex-col items-start cursor-default visible" style="transition-delay: 200ms;">
+<div class="feature-icon text-3xl mb-4">🎯</div>
+<h3 class="text-xl font-bold mb-3">
+<span class="lang-en">Precision Control</span>
+<span class="lang-cn">精准微调</span>
+</h3>
+<p class="text-text-muted">
+<span class="lang-en">Fine adjustment using the D-pad for pixel-perfect tasks.</span>
+<span class="lang-cn">使用方向键进行精确操作，胜任细腻任务。</span>
+</p>
+</div>
+<!-- Feature 3 -->
+<div class="feature-card reveal-card bg-white p-6 rounded-2xl border border-border-subtle shadow-sm flex flex-col items-start cursor-default visible" style="transition-delay: 300ms;">
+<div class="feature-icon text-3xl mb-4">🎙️</div>
+<h3 class="text-xl font-bold mb-3">
+<span class="lang-en">Offline Voice Input</span>
+<span class="lang-cn">离线语音输入</span>
+</h3>
+<p class="text-text-muted">
+<span class="lang-en">Powered by OpenAI Whisper for accurate speech recognition.</span>
+<span class="lang-cn">由 OpenAI Whisper 驱动，提供极致精准的语音识别。</span>
+</p>
+</div>
+<!-- Feature 4 -->
+<div class="feature-card reveal-card bg-white p-6 rounded-2xl border border-border-subtle shadow-sm flex flex-col items-start cursor-default visible" style="transition-delay: 400ms;">
+<div class="feature-icon text-3xl mb-4">⚡</div>
+<h3 class="text-xl font-bold mb-3">
+<span class="lang-en">Shortcut Actions</span>
+<span class="lang-cn">快捷操作</span>
+</h3>
+<p class="text-text-muted">
+<span class="lang-en">Fast access to common commands and system functions.</span>
+<span class="lang-cn">快速执行常用指令与系统功能，效率翻倍。</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="max-w-[1200px] mx-auto px-gutter py-12 text-center text-text-muted text-sm border-t border-border-subtle/50 mt-12">
+<p class="text-2xl font-black tracking-tight text-black mb-2">Joy Flow by LazyRichie.com</p>
+<p class="lang-en">Crafted for a seamless workflow.</p>
+<p class="lang-cn">为无缝工作流而生。</p>
+</footer>
+</main>
+<script>
+        const APP_CONFIG = {
+            github: "https://github.com/richarddong124-boop/Joy_Flow",
+            download: "https://github.com/richarddong124-boop/Joy_Flow/releases/latest/download/Joy.Flow.exe"
+        };
+
+        document.querySelector('[data-app-link="github"]').href = APP_CONFIG.github;
+        document.querySelector('[data-app-link="download"]').href = APP_CONFIG.download;
+
+        function toggleLang() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            html.setAttribute('lang', currentLang === 'en' ? 'zh' : 'en');
+        }
+
+        // Intersection Observer for staggered entrance
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.reveal-card');
+                    cards.forEach((card) => {
+                        card.classList.add('visible');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const featuresGrid = document.getElementById('features-grid');
+        if (featuresGrid) {
+            observer.observe(featuresGrid);
+        }
+
+        // Parallax Background Text Animation
+        const bgTextWrapper = document.getElementById('bg-text-wrapper');
+        
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            const translateX = scrollY * -0.1;
+            
+            if (bgTextWrapper) {
+                bgTextWrapper.style.transform = `translateX(${translateX}px)`;
+            }
+        }
+
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        updateParallax(); // Initial position
+    </script>
+
+
+</body></html>
